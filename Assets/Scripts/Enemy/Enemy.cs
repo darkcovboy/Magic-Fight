@@ -21,18 +21,12 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void Awake()
-    {
-        _animator = GetComponent<Animator>();
-    }
-
     public void TakeDamage(int damage)
     {
         Health -= damage;
 
         if (Health <= 0)
         {
-            _animator.Play("Dying");
             Diyng?.Invoke(this);
             Destroy(gameObject);
         }

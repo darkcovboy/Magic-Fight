@@ -11,6 +11,9 @@ public class Shoot : MonoBehaviour
     [SerializeField] private Transform _prProjectile;
     [SerializeField] private Transform _spawnPlace;
     [SerializeField] private Player _player;
+    [SerializeField] private ChangeSpell _changeSpell;
+
+    private const string ShootAnimation = "Shoot";
 
     private StarterAssetsInputs _starterAssetsInputs;
     private Animator _animator;
@@ -35,10 +38,10 @@ public class Shoot : MonoBehaviour
 
         if (_starterAssetsInputs.shoot && _player.GetMana() > 0)
         {
-            _player.TakeMana(_player.CurrentSpell.GetManacost());
+            _player.TakeMana(_changeSpell.CurrentSpell.GetManacost());
             Vector3 aimDir = (mouseWorldPosition - _spawnPlace.position).normalized;
-            Instantiate(_player.CurrentSpell, _spawnPlace.position, Quaternion.LookRotation(aimDir, Vector3.up));
-            _animator.Play("Shoot");
+            Instantiate(_changeSpell.CurrentSpell, _spawnPlace.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            _animator.Play(ShootAnimation);
             _starterAssetsInputs.shoot = false;
         }
     }

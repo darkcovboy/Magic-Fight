@@ -546,7 +546,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 447098998541672934, guid: 8b96082689a2745409b48c0c6bc228d5, type: 3}
   m_PrefabInstance: {fileID: 447098998229096620}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1493508479}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be879f55a32155f48add6c2e58357521, type: 3}
@@ -7708,6 +7708,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e289bf5debb17f6459818c207d781953, type: 3}
+--- !u!1 &1493508479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 446589010318208968, guid: 8b96082689a2745409b48c0c6bc228d5, type: 3}
+  m_PrefabInstance: {fileID: 447098998229096620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1493508480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493508479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ec339ca9507d74d99e2b9ce4613409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spells:
+  - {fileID: 6973833046765834563, guid: c634e9f087c3b5e4b9c450c69ed3b2ff, type: 3}
+  - {fileID: 316582273556380561, guid: b8bc08f4ab0da4146be3c8f4de1e186e, type: 3}
+  _player: {fileID: 76986778}
 --- !u!1001 &1509342693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8628,7 +8649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5d54e119e50bb429e00bb39cce931c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 76986778}
+  _changeSpell: {fileID: 1493508480}
   image: {fileID: 1054358635}
 --- !u!114 &1665052622
 MonoBehaviour:
@@ -10324,6 +10345,14 @@ PrefabInstance:
       propertyPath: _manaRegenaration
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 447098998541672934, guid: 8b96082689a2745409b48c0c6bc228d5, type: 3}
+      propertyPath: _timeDelayManaRegenaration
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 447098998541672954, guid: 8b96082689a2745409b48c0c6bc228d5, type: 3}
+      propertyPath: _changeSpell
+      value: 
+      objectReference: {fileID: 1493508480}
     - target: {fileID: 447098998569797891, guid: 8b96082689a2745409b48c0c6bc228d5, type: 3}
       propertyPath: m_Name
       value: Player

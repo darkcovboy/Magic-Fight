@@ -7,6 +7,7 @@ using UnityEngine;
 public class DyingState : State
 {
     private Animator _animator;
+    private const string DiyngAnimation = "Diyng";
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class DyingState : State
 
     private void OnEnable()
     {
-        _animator.Play("Diyng");
+        _animator.Play(DiyngAnimation);
     }
 
     private void OnDisable()

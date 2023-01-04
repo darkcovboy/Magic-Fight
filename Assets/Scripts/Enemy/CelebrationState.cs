@@ -7,6 +7,7 @@ using UnityEngine;
 public class CelebrationState : State
 {
     private Animator _animator;
+    private const string CelebrationAnimation = "Celebration";
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class CelebrationState : State
 
     private void OnEnable()
     {
-        _animator.Play("Celebration");
+        _animator.Play(CelebrationAnimation);
     }
 
     private void OnDisable()
