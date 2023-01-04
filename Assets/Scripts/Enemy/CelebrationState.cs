@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-
 public class CelebrationState : State
 {
     private Animator _animator;
+
     private const string CelebrationAnimation = "Celebration";
 
     private void Awake()

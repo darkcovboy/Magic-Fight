@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(Rigidbody))]
 
+[RequireComponent(typeof(Rigidbody))]
 public class Fireball : Spell
 {
     [SerializeField] private float _speed;

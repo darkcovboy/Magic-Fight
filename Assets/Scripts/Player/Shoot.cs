@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 using StarterAssets;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(StarterAssetsInputs))]
+
 public class Shoot : MonoBehaviour
 {
     [SerializeField] private LayerMask _aimColliderMask = new LayerMask();
@@ -31,7 +34,7 @@ public class Shoot : MonoBehaviour
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
 
-        if(Physics.Raycast(ray, out RaycastHit raycastHit, 999f, _aimColliderMask))
+        if(Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, _aimColliderMask))
         {
             mouseWorldPosition = raycastHit.point;
         }

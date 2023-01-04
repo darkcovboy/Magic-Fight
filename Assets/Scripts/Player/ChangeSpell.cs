@@ -4,6 +4,7 @@ using UnityEngine;
 using StarterAssets;
 using UnityEngine.Events;
 [RequireComponent(typeof(Player))]
+[RequireComponent(typeof(StarterAssetsInputs))]
 
 public class ChangeSpell : MonoBehaviour
 {

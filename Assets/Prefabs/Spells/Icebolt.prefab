@@ -169,6 +169,9 @@ MonoBehaviour:
   Manacost: 10
   AudioClip: {fileID: 8300000, guid: 829ae4e4b607b7d419b0b45768b6437a, type: 3}
   _afterDiyngParticles: {fileID: 882886339501145831, guid: 3b64a1140c406624eaef18d175fd2380, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   _speed: 10
 --- !u!136 &6343169969269519638
 CapsuleCollider:

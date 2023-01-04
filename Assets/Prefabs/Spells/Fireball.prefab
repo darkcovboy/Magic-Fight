@@ -134,6 +134,9 @@ MonoBehaviour:
   Manacost: 20
   AudioClip: {fileID: 8300000, guid: 3103bd297f77eb845a6963fdafb08c5c, type: 3}
   _afterDiyngParticles: {fileID: 1169171164041336900, guid: 14eb0a7f5e371f54f8a8ff74414cfaa9, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   _speed: 20
 --- !u!1001 &6693731815441874405
 PrefabInstance:

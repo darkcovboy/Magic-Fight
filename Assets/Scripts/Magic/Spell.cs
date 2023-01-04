@@ -10,6 +10,7 @@ public class Spell : MonoBehaviour
     [SerializeField] protected int Manacost;
     [SerializeField] protected AudioClip AudioClip;
     [SerializeField] private GameObject _afterDiyngParticles;
+    [SerializeField] private LayerMask _layerMask;
 
     public int GetManacost()
     {
@@ -31,7 +32,7 @@ public class Spell : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(other.gameObject.layer == 6)
+        if(other.gameObject.layer == _layerMask)
         {
             GameObject afterDiyngParticles = (GameObject)Instantiate(_afterDiyngParticles, transform.position, transform.rotation);
             Destroy(afterDiyngParticles, afterDiyngParticles.GetComponent<ParticleSystem>().startLifetime);

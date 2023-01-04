@@ -9,9 +9,11 @@ public class AttackState : State
     [SerializeField] private int _damage;
     [SerializeField] private float _delay;
 
+    private const string AttackAnimation = "Attack";
+
     private float _lastAttackTime;
     private Animator _animator;
-    private const string AttackAnimimation = "Attack";
+    private bool _canAttack;
 
     private void Start()
     {
@@ -20,17 +22,21 @@ public class AttackState : State
 
     private void Update()
     {
-        if (_lastAttackTime <=0)
-        {
-            Attack(Target);
-            _lastAttackTime = _delay;    
-        }
-        _lastAttackTime -= Time.deltaTime;
+        if (!_canAttack) return;
+        _canAttack = false;
+
+        StartCoroutine(Reload());
     }
 
     private void Attack(Player Target)
     {
-        _animator.Play(AttackAnimimation);
+        _animator.Play(AttackAnimation);
         Target.ApplyDamage(_damage);
+    }
+
+    private IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(_delay);
+        _canAttack = true;
     }
 }

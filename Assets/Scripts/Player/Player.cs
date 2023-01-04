@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     {
         ManaChanged?.Invoke(_mana, _maxMana);
         _mana -= manacost;
-        var regenarateManaJob = StartCoroutine(RegenerateMana());
+        StartCoroutine(RegenerateMana());
     }
 
     public int GetMana()
