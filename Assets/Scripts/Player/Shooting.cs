@@ -7,14 +7,14 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(StarterAssetsInputs))]
 
-public class Shoot : MonoBehaviour
+public class Shooting : MonoBehaviour
 {
     [SerializeField] private LayerMask _aimColliderMask = new LayerMask();
     [SerializeField] private Transform _debugTransform;
     [SerializeField] private Transform _prProjectile;
     [SerializeField] private Transform _spawnPlace;
     [SerializeField] private Player _player;
-    [SerializeField] private ChangeSpell _changeSpell;
+    [SerializeField] private SpellChanger _changeSpell;
 
     private const string ShootAnimation = "Shoot";
 
@@ -39,7 +39,7 @@ public class Shoot : MonoBehaviour
             mouseWorldPosition = raycastHit.point;
         }
 
-        if (_starterAssetsInputs.shoot && _player.GetMana() > 0)
+        if (_starterAssetsInputs.shoot && _player.Mana > 0)
         {
             _player.TakeMana(_changeSpell.CurrentSpell.GetManacost());
             Vector3 aimDir = (mouseWorldPosition - _spawnPlace.position).normalized;

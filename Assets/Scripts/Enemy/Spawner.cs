@@ -11,7 +11,6 @@ public class Spawner : MonoBehaviour
 
     private Wave _currentWave;
     private int _currentWaveIndex;
-    private float _timeAfterLastSpawn;
     private int _spawned;
 
     public event UnityAction AllEnemySpawned;
@@ -26,16 +25,6 @@ public class Spawner : MonoBehaviour
     {
         if (_currentWave == null)
             return;
-
-        _timeAfterLastSpawn += Time.deltaTime;
-
-        if (_timeAfterLastSpawn >= _currentWave.Delay)
-        {
-            InstantiateEnemy();
-            _spawned++;
-            _timeAfterLastSpawn = 0;
-            EnemyCountChanged?.Invoke(_spawned, _currentWave.Count);
-        }
 
         if (_currentWave.Count <= _spawned)
         {
@@ -63,6 +52,7 @@ public class Spawner : MonoBehaviour
     private void SetWave(int index)
     {
         _currentWave = _waves[index];
+        StartCoroutine(SpawnEnemies());
         EnemyCountChanged?.Invoke(0, 1);
     }
 
@@ -70,6 +60,16 @@ public class Spawner : MonoBehaviour
     {
         enemy.Diyng -= OnEnemyDying;
         _player.AddMoney(enemy.Reward);
+    }
+
+    private IEnumerator SpawnEnemies()
+    {
+        while (_spawned < _currentWave.Count)
+        {
+            InstantiateEnemy();
+            _spawned++;
+            yield return new WaitForSecondsRealtime(_currentWave.Delay);
+        }
     }
 }
 

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Player))]
 [RequireComponent(typeof(StarterAssetsInputs))]
 
-public class ChangeSpell : MonoBehaviour
+public class SpellChanger : MonoBehaviour
 {
     [SerializeField] public List<Spell> _spells;
     [SerializeField] private Player _player;

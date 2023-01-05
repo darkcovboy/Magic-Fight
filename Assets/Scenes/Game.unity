@@ -10343,11 +10343,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
     - target: {fileID: 447098998541672934, guid: 8b96082689a2745409b48c0c6bc228d5, type: 3}
       propertyPath: _manaRegenaration
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 447098998541672934, guid: 8b96082689a2745409b48c0c6bc228d5, type: 3}
       propertyPath: _timeDelayManaRegenaration
-      value: 2.3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 447098998541672954, guid: 8b96082689a2745409b48c0c6bc228d5, type: 3}
       propertyPath: _changeSpell

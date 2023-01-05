@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SpellCurrent : MonoBehaviour
 {
-    [SerializeField] private ChangeSpell _changeSpell;
+    [SerializeField] private SpellChanger _changeSpell;
     [SerializeField] private Image image;
 
     private void OnEnable()

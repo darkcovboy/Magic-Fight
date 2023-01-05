@@ -18,16 +18,13 @@ public class Player : MonoBehaviour
     public event UnityAction<int,int> ManaChanged;
     public event UnityAction<int, int> HealthChanged;
 
+    public int Mana => _mana;
+
     public void TakeMana(int manacost)
     {
         ManaChanged?.Invoke(_mana, _maxMana);
         _mana -= manacost;
         StartCoroutine(RegenerateMana());
-    }
-
-    public int GetMana()
-    {
-        return _mana;
     }
 
     public void ApplyDamage(int damage)

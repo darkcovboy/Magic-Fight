@@ -11,7 +11,6 @@ public class AttackState : State
 
     private const string AttackAnimation = "Attack";
 
-    private float _lastAttackTime;
     private Animator _animator;
     private bool _canAttack;
 
@@ -24,8 +23,8 @@ public class AttackState : State
     {
         if (!_canAttack) return;
         _canAttack = false;
-
-        StartCoroutine(Reload());
+        Attack(Target);
+       //    StartCoroutine(Reload());
     }
 
     private void Attack(Player Target)
